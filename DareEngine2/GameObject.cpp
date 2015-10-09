@@ -30,7 +30,7 @@ void GameObject::addComponent(std::shared_ptr<GameComponent> component){
 
 void GameObject::input(float delta){
 	
-	transform->update();
+
 	for (auto component : components){
 		component->input(delta);
 	}
@@ -65,7 +65,7 @@ void GameObject::update(float delta){
 
 void GameObject::inputAll(float delta){
 
-	transform->update();
+
 	this->input(delta);
 
 

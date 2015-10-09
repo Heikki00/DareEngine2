@@ -19,16 +19,8 @@ Camera::~Camera(){
 
 Matrix4 Camera::getViewProjection(){
 	
-	Matrix4 tr = Math::translationMatrix(-getTransform()->getTransformedPos());
-	Vector3 x = getTransform()->getTRight();
-	Vector3 u = getTransform()->getTUp();
-	Vector3 f = getTransform()->getTForward();
-	Matrix4 rot(x.x, x.y, x.z, 0,
-		u.x, u.y, u.z, 0,
-		f.x, f.y, f.z, 0,
-		0,0,0,1
-		);
-
+	Matrix4 m;
+	
 
 	//TODO: Make function to DareMath that returns matrix
 	return projection * getTransform()->getTransform().inverse();

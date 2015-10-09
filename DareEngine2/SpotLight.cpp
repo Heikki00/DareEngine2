@@ -26,5 +26,5 @@ SpotLight::SpotLight(const Vector3& color, const float intensity, const Vector3&
 Vector3 SpotLight::getDirection()
 {
 
-	return getTransform()->getTForward();
+	return getTransform()->getWorldForward();
 }

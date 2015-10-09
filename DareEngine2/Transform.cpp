@@ -1,135 +1,180 @@
 #include "Transform.h"
 #include <iostream>
 
-Transform::Transform(){
-	
-	scale = 1;
-	
-	isChild = false;
-
-	firstTime = true;
-
-}
-
-
-Transform::~Transform(){
-	
-}
-
-
-
-Matrix4 Transform::getTransform(){
-	Matrix4 mat;
-
-	
-
-	mat.translate(pos);
-	
-	mat *= rot.toMatrix();
-
-
-
-	mat.scale(scale);
-
-
-	if (isChild && firstTime){
-		parentMat = parent->getTransform();
-		firstTime = false;
-	}
-
-	
-	return getParentMatrix() * mat;
-}
-
-bool Transform::hasChanged()
+Transform::Transform(): scaleNum(1.f), dirty(false), parent(nullptr)
 {
 
-	
+}
 
 
-		if (isChild && parent->hasChanged())
-			return true;
-	
-	
-	
-	if (oldPosition != pos){
-		return true;
-	}
-	if (oldRotation != rot){
-		return true;
+
+
+void Transform::translate(float x, float y, float z)
+{
+	translation.x += x; translation.y += y; translation.z += z;
+	dirty = true;
+}
+
+void Transform::translate(const Vector3& translation)
+{
+	this->translation += translation;
+	dirty = true;
+}
+
+
+
+void Transform::rotate(const Vector3& axis, float angle)
+{
+	rotation = Quaternion(axis, angle) * rotation;
+	dirty = true;
+}
+
+void Transform::rotate(const Quaternion& q)
+{
+	rotation =  q * rotation;
+	dirty = true;
+}
+
+void Transform::scale(float f)
+{
+	this->scaleNum *= f;
+	dirty = true;
+}
+
+
+
+Vector3 Transform::getPosition() const
+{
+	return translation;
+}
+
+
+void Transform::setPosition(const Vector3& v)
+{
+	translation = v;
+	dirty = true;
+}
+
+
+Quaternion Transform::getRotation() const
+{
+	return rotation;
+}
+
+
+void Transform::setRotation(const Quaternion& q)
+{
+	rotation = q;
+	dirty = true;
+}
+
+float Transform::getScale() const
+{
+	return this->scaleNum;
+}
+
+void Transform::setScale(float f)
+{
+	this->scaleNum = f;
+	dirty = true;
+}
+
+Vector3 Transform::getWorldPosition() const
+{
+	Vector3 parentPosition;
+	if (parent) parentPosition = parent->getWorldPosition();
+
+
+	return parentPosition + translation;
+
+
+}
+
+Quaternion Transform::getWorldRotation() const
+{
+	Quaternion parentRotation;
+	if (parent) parentRotation = parent->getWorldRotation();
+
+
+	return rotation * parentRotation;
+}
+
+float Transform::getWorldScale() const
+{
+	float parentScale;
+	if (parent) parentScale = parent->getWorldScale();
+
+
+	return scaleNum * parentScale;
+}
+
+Vector3 Transform::rotateVector(const Vector3& v) const
+{
+	return rotation * v;
+}
+
+Vector3 Transform::rotateVectorWorld(const Vector3& v) const
+{
+	return getWorldRotation() * v;
+}
+
+Matrix4 Transform::getTransform()
+{
+	if (!parent) {
+		if (!dirty) {
+			return cachedTransform;
+		}
+		
+		cachedTransform = Math::translationMatrix(translation);
+		cachedTransform *= rotation.toMatrix();
+		cachedTransform *= Math::scaleMatrix(scaleNum);
+		
+		dirty = false;
+		return cachedTransform;
 	}
 
-	if (oldScale != scale){
-		return true;
+
+	if (dirty || parent->isDirty()) {
+		
+		Matrix4 parentTransform = parent->getTransform();
+
+		cachedTransform = Math::translationMatrix(translation);
+		cachedTransform *= rotation.toMatrix();
+		cachedTransform *= Math::scaleMatrix(scaleNum);
+		cachedTransform = parentTransform * cachedTransform;
+
+		dirty = false;
+		return cachedTransform;
 	}
+	else {
+		return cachedTransform;
+	}
+
+
+
+
+
+
+
+
+
+}
+
+
+void Transform::setParent(Transform* parent)
+{
+	this->parent = parent;
+	dirty = true;
+}
+
+bool Transform::isDirty() {
+
+	if (dirty) return true;
+
+	if (parent) return parent->isDirty();
 
 	return false;
-}
-
-Matrix4 Transform::getParentMatrix()
-{
-	if (isChild && parent->hasChanged())   {
-		parentMat = parent->getTransform();
-		
-	}
-	return parentMat;
-}
-
-Vector3 Transform::getTransformedPos()
-{
-	return Vector3(getParentMatrix() * pos.homogeneous());
 
 }
-Quaternion Transform::getTransformedRot()
-{
-	if (isChild && parent->hasChanged()){
-		parentRot = parent->getTransformedRot() * rot;
-		return parentRot;
-	}
-	return parentRot * rot;
-}
-
-void Transform::update()
-{
-	oldPosition = pos;
-	oldRotation = rot;
-	oldScale = scale;
-}
-
-
-void Transform::setFromMatrix(const Matrix4& mat){
-
-
-}
-
-
-
-#pragma region moveAndRotate
-void Transform::offset(const Vector3& direction, float amount)
-{
-	pos = pos + (amount * direction);
-}
-
-void Transform::rotate(const Vector3& axis, float angle, bool local)
-{
-	
-	auto newRot = Quaternion(axis, angle);
-
-	if (local)
-		rot = rot * newRot;
-
-	else
-		rot = newRot * rot;
-}
-
-
-void Transform::rotate(const Quaternion& val)
-{
-	rot = val * rot;
-}
-
-
-
-#pragma endregion
 
 

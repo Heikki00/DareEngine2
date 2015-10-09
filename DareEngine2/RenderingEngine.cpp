@@ -410,8 +410,8 @@ void RenderingEngine::generateShandowMaps(std::shared_ptr<BaseLight> light, Game
 	if (shandowInfo){
 
 		altCamera->setProjection(shandowInfo->getProjection());
-		altCamera->getTransform()->setPosition(light->getTransform()->getTransformedPos());
-		altCamera->getTransform()->setRotation(light->getTransform()->getTransformedRot());
+		altCamera->getTransform()->setPosition(light->getTransform()->getWorldPosition());
+		altCamera->getTransform()->setRotation(light->getTransform()->getWorldRotation());
 
 
 		lightMatrix = RenderingEngine::biasMatrix * altCamera->getViewProjection();

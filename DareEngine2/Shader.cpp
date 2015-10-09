@@ -360,7 +360,7 @@ void Shader::updateUniforms(Transform* transform, Material* material, RenderingE
 
 		else if (!strncmp(uniform.getName().c_str(), "C_", 2)){
 			if (uniform.getName() == "C_eyePos"){
-				uniform.setValue(renderingEngine->getMainCamera()->getTransform()->getTransformedPos());
+				uniform.setValue(renderingEngine->getMainCamera()->getTransform()->getWorldPosition());
 			}
 			else{
 				//DebugUtility::log_err("ERROR: Invalid uniform with \"C_\" prefix found from shader %s: %s %s\n", filename.c_str(), uniformType.c_str(), uniformName.c_str());

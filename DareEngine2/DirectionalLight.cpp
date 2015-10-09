@@ -26,6 +26,6 @@ DirectionalLight::DirectionalLight(const Vector3& color, const float intensity,
 
 Vector3 DirectionalLight::getDirection()
 {
-	return getTransform()->getTForward();
+	return getTransform()->getWorldForward();
 
 }

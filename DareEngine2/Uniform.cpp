@@ -177,7 +177,7 @@ void Uniform::loadDefaultCallbacks()
 		if (u.hasChild("linear")) u.getChild("linear")->setValue(poi->getLinear());
 		if (u.hasChild("exponent")) u.getChild("exponent")->setValue(poi->getExponent());
 
-		if (u.hasChild("position")) u.getChild("position")->setValue(poi->getTransform()->getTransformedPos());
+		if (u.hasChild("position")) u.getChild("position")->setValue(poi->getTransform()->getWorldPosition());
 		if (u.hasChild("range")) u.getChild("range")->setValue(poi->getRange());
 
 	};

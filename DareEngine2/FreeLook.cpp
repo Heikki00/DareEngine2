@@ -75,50 +75,29 @@ void FreeLook::input(float delta) {
 
 
 	if (Input::getKey(SDL_SCANCODE_W)){
-		Vector3 oldPos = getTransform()->getTransformedPos();
-		getTransform()->offset(getTransform()->getForward(), speed);
+	
+		getTransform()->translate(getTransform()->getForward() * speed);
 
 	}
 	if (Input::getKey(SDL_SCANCODE_S)){
-		getTransform()->offset(getTransform()->getBackward(), speed);
+		getTransform()->translate(getTransform()->getBack() * speed);
 	}
 	if (Input::getKey(SDL_SCANCODE_A)){
-		getTransform()->offset(getTransform()->getLeft(), speed);
+		getTransform()->translate(getTransform()->getLeft() * speed);
 	}
 	if (Input::getKey(SDL_SCANCODE_D)){
-		getTransform()->offset(getTransform()->getRight(), speed);
+		getTransform()->translate(getTransform()->getRight() * speed);
 
 	}
 
 	if (Input::getKey(SDL_SCANCODE_X)){
-		getTransform()->offset(Vector3(0, 1, 0), speed);
+		getTransform()->translate(Vector3(0, 1, 0) * speed);
 	}
 	if (Input::getKey(SDL_SCANCODE_C)){
-		getTransform()->offset(Vector3(0, 1, 0), -speed);
+		getTransform()->translate(Vector3(0, 1, 0) * -speed);
 	}
 
-	if (Input::getKey(SDL_SCANCODE_Q)){
-		getTransform()->rotate(Quaternion(Vector3::WORLD_UP, 0.02f));
-		std::cout << getTransform()->getTLeft();
-	}
 
-	if (Input::getKey(SDL_SCANCODE_E)){
-		getTransform()->rotate(Quaternion(Vector3::WORLD_UP, -0.02f));
-	
-
-	}
-
-	if (Input::getKey(SDL_SCANCODE_R)) {
-		getTransform()->rotate(Quaternion(getTransform()->getLeft(), -0.02f));
-
-
-	}
-
-	if (Input::getKey(SDL_SCANCODE_T)) {
-		getTransform()->rotate(Quaternion(getTransform()->getLeft(), 0.02f));
-
-
-	}
 
 
 	if (Input::isJustPressed(SDL_SCANCODE_ESCAPE)){

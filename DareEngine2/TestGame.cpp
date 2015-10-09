@@ -52,7 +52,7 @@ void TestGame::init()
 	auto floorObject = GameObject::makePtr();
 	floorObject->addComponent(MeshComponent::makePtr(new MeshComponent(mesh1, material2)));
 	
-	floorObject->getTransform()->offset(Vector3(0, -1, 0), 6);
+	floorObject->getTransform()->translate(Vector3(0, -1, 0) * 6);
 	floorObject->getTransform()->rotate(Quaternion(Vector3(1, 0, 0), PI / 2.0));
 	floorObject->getTransform()->setScale(10);
 
@@ -62,7 +62,7 @@ void TestGame::init()
 	
 	planeObject->getTransform()->setScale(10.f);
 	planeObject->getTransform()->rotate(Vector3(1, 0, 0), Math::rad(90.f));
-	planeObject->getTransform()->offset(Vector3(0, 0, 1), 6);
+	planeObject->getTransform()->translate(Vector3(0, 0, 1) * 6);
 
 
 
@@ -79,7 +79,7 @@ void TestGame::init()
 
 	teaObject->getTransform()->setScale(1);
 	//teaObject->getTransform()->setScale(10.f, 10.f, 10.f);
-	teaObject->getTransform()->offset(Vector3(0, 0, 1), 0);
+	//teaObject->getTransform()->translate(Vector3(0, 0, 1), 0);
 	//teaObject->getTransform()->offset(Vector3(0, 1, 0), 5);
 	teaObject->name = "teaObject";
 	//teaObject->getTransform()->rotate(Vector3(1, 0, 0), 45.f);
@@ -95,8 +95,8 @@ void TestGame::init()
 
 	auto cubeObject = GameObject::makePtr();
 	cubeObject->addComponent(MeshComponent::makePtr(new MeshComponent(Mesh::makePtr(new Mesh("res/objects/cube.obj")), material)));
-	cubeObject->getTransform()->offset(Vector3(1, 0, 1), 5.f);
-	cubeObject->getTransform()->offset(Vector3(0, 1, 0), -5.5f);
+	cubeObject->getTransform()->translate(Vector3(1, 0, 1) * 5.f);
+	cubeObject->getTransform()->translate(Vector3(0, 1, 0) * -5.5f);
 	cubeObject->getTransform()->setScale(0.5f);
 
 

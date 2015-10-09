@@ -12,14 +12,11 @@
 int main(int argc, char** argv){
 
 
-	Matrix4 m;
-
-	m.rotate(Vector3(0, 1, 0), PI / 2.f);
-
-	m.translate(Vector3(2, 0, 0));
-
-	m.inverse();
-	std::cout << m;
+	Transform t, t1, t2;
+	t1.setParent(&t);
+	t2.setParent(&t1);
+	t1.translate(Vector3(1, 2, 3));
+	std::cout << t2.getTransform();
 
 
 	TestGame* game = new TestGame;
