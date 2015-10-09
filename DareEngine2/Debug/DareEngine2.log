@@ -1,0 +1,103 @@
+﻿Build started 8.10.2015 22.49.50.
+     1>Project "C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\DareEngine2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\Math\Math" /I"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\Dependencies\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt BaseLight.cpp Camera.cpp CoreEngine.cpp DirectionalLight.cpp FreeLook.cpp GLSLParser.cpp Game.cpp GameComponent.cpp GameObject.cpp Main.cpp MappedValues.cpp Material.cpp Mesh.cpp MeshComponent.cpp MeshRecource.cpp PointLight.cpp RenderingEngine.cpp Shader.cpp ShaderRecource.cpp ShaderStage.cpp SpotLight.cpp TestGame.cpp Texture.cpp TextureRecource.cpp Transform.cpp Uniform.cpp Utility.cpp Vertex.cpp
+         BaseLight.cpp
+         Generating Code...
+         Compiling...
+         Vertex.cpp
+         Utility.cpp
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\utility.cpp(18): warning C4244: 'argument': conversion from 'std::streamoff' to 'unsigned int', possible loss of data
+         Uniform.cpp
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\uniform.cpp(20): warning C4146: unary minus operator applied to unsigned type, result still unsigned
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\uniform.cpp(54): warning C4146: unary minus operator applied to unsigned type, result still unsigned
+         Transform.cpp
+         TextureRecource.cpp
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\texturerecource.cpp(51): warning C4244: 'argument': conversion from 'GLenum' to 'GLfloat', possible loss of data
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\texturerecource.cpp(84): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+         Texture.cpp
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2811): warning C4996: 'std::_Fill_n': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2797): note: see declaration of 'std::_Fill_n'
+         c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\texture.cpp(75): note: see reference to function template instantiation '_OutIt std::fill_n<unsigned char**,int,nullptr>(_OutIt,_Diff,const _Ty &)' being compiled
+                 with
+                 [
+                     _OutIt=unsigned char **,
+                     _Diff=int,
+                     _Ty=nullptr
+                 ]
+         TestGame.cpp
+         SpotLight.cpp
+         ShaderStage.cpp
+         ShaderRecource.cpp
+         Shader.cpp
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\shader.cpp(143): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\shader.cpp(186): warning C4018: '<': signed/unsigned mismatch
+         RenderingEngine.cpp
+         PointLight.cpp
+         MeshRecource.cpp
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\meshrecource.cpp(42): warning C4018: '<': signed/unsigned mismatch
+         MeshComponent.cpp
+         Mesh.cpp
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\mesh.cpp(157): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\mesh.cpp(172): warning C4018: '<': signed/unsigned mismatch
+         Material.cpp
+         MappedValues.cpp
+         Main.cpp
+         GameObject.cpp
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\gameobject.cpp(162): warning C4018: '>=': signed/unsigned mismatch
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\gameobject.cpp(234): warning C4018: '>=': signed/unsigned mismatch
+         Generating Code...
+         Compiling...
+         GameComponent.cpp
+         Game.cpp
+         GLSLParser.cpp
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\glslparser.cpp(268): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdio.h(2254): note: see declaration of 'sscanf'
+         FreeLook.cpp
+         DirectionalLight.cpp
+         CoreEngine.cpp
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\coreengine.cpp(84): warning C4244: '=': conversion from 'long' to 'float', possible loss of data
+         Camera.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\Dependencies\lib" /LIBPATH:C:\Users\Heikki\Desktop\dev\AutoSDK\2015.1\lib\vs2013\x86\debug /LIBPATH:C:\Users\Heikki\Desktop\dev\AutoSDK\2015.1\lib\vs2013\x86\debug SDL2.lib SDL2main.lib DevIL.lib ILU.lib ILUT.lib glew32.lib assimpd.lib zlibstaticd.lib wininet.lib opengl32.lib glu32.lib "libfbxsdk-md.lib" glew32s.lib SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBMCT /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.lib" /MACHINE:X86 Debug\BaseLight.obj
+         Debug\Camera.obj
+         Debug\DebugUtility.obj
+         Debug\DirectionalLight.obj
+         Debug\FreeLook.obj
+         Debug\Game.obj
+         Debug\GameComponent.obj
+         Debug\GameObject.obj
+         Debug\GLSLParser.obj
+         Debug\Input.obj
+         Debug\CoreEngine.obj
+         Debug\Main.obj
+         Debug\MappedValues.obj
+         Debug\Material.obj
+         Debug\Mesh.obj
+         Debug\MeshRecource.obj
+         Debug\MeshComponent.obj
+         Debug\PointLight.obj
+         Debug\Shader.obj
+         Debug\RenderingEngine.obj
+         Debug\ShaderStage.obj
+         Debug\ShaderRecource.obj
+         Debug\SpotLight.obj
+         Debug\TestGame.obj
+         Debug\Texture.obj
+         Debug\TextureRecource.obj
+         Debug\Time.obj
+         Debug\Transform.obj
+         Debug\Uniform.obj
+         Debug\Utility.obj
+         Debug\UUCallback.obj
+         Debug\Vertex.obj
+         Debug\Window.obj
+         "C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\Math.lib"
+            Creating library C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.lib and object C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.exp
+         DareEngine2.vcxproj -> C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.exe
+     1>Done Building Project "C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\DareEngine2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:26.88
