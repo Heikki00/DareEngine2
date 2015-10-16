@@ -1,10 +1,14 @@
-﻿Build started 9.10.2015 23.13.25.
+﻿Build started 12.10.2015 18.47.36.
      1>Project "C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\DareEngine2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\Math\Math" /I"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\Dependencies\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Transform.cpp
-         Transform.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\Math\Math" /I"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\Dependencies\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt RenderingEngine.cpp
+         RenderingEngine.cpp
+         Unknown compiler version - please run the configure tests and report the results
+     1>c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\dependencies\include\cegui\exceptions.h(41): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'CEGUI::Exception'
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime_exception.h(43): note: see declaration of 'std::exception'
+         c:\users\heikki\documents\visual studio 2015\projects\dareengine2\dareengine2\dependencies\include\cegui\exceptions.h(40): note: see declaration of 'CEGUI::Exception'
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\Dependencies\lib" /LIBPATH:C:\Users\Heikki\Desktop\dev\AutoSDK\2015.1\lib\vs2013\x86\debug /LIBPATH:C:\Users\Heikki\Desktop\dev\AutoSDK\2015.1\lib\vs2013\x86\debug SDL2.lib SDL2main.lib DevIL.lib ILU.lib ILUT.lib glew32.lib assimpd.lib zlibstaticd.lib wininet.lib opengl32.lib glu32.lib "libfbxsdk-md.lib" glew32s.lib SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBMCT /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.lib" /MACHINE:X86 Debug\BaseLight.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\Dependencies\lib\debug" SDL2.lib SDL2main.lib DevIL.lib ILU.lib ILUT.lib glew32.lib assimpd.lib zlibstaticd.lib wininet.lib opengl32.lib glu32.lib glew32s.lib "CEGUIOpenGLRenderer-0_d.lib" "CEGUIBase-0_d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBMCT /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Debug\DareEngine2.lib" /MACHINE:X86 Debug\BaseLight.obj
          Debug\Camera.obj
          Debug\DebugUtility.obj
          Debug\DirectionalLight.obj
@@ -43,4 +47,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.64
+Time Elapsed 00:00:06.31

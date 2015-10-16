@@ -6,17 +6,23 @@
 #include "CoreEngine.h"
 #include "DebugUtility.h"
 #include "TestGame.h"
+#include "FestusMath.h"
 
-#include "DareMath.h"
+#include <CEGUI/CEGUI.h>
+#include <CEGUI/RendererModules/OpenGL/GL3Renderer.h>
+
+
 
 int main(int argc, char** argv){
 
 
-	Transform t, t1, t2;
-	t1.setParent(&t);
-	t2.setParent(&t1);
-	t1.translate(Vector3(1, 2, 3));
-	std::cout << t2.getTransform();
+
+	
+	Math::initMemory(1000, 500, 100, 100);
+
+
+	
+
 
 
 	TestGame* game = new TestGame;
@@ -26,12 +32,13 @@ int main(int argc, char** argv){
 	CoreEngine mainComponent(800, 600, 60.0, game);
 	mainComponent.createWindow("3D Game Engine Development copy");
 	
-	
-	int i = 0;
+	CEGUI::OpenGL3Renderer& myRenderer = CEGUI::OpenGL3Renderer::bootstrapSystem();
+		
+	//CEGUI::GUIContext& g = CEGUI::System::getSingleton().createGUIContext(myRenderer.getDefaultRenderTarget());
+	//CEGUI::Window* root = CEGUI::WindowManager::getSingleton().createWindow("defaultWindow", "root");
+//	g.setRootWindow(root);
 
-	glGetIntegerv(GL_MAX_UNIFORM_BUFFER_BINDINGS, &i);
 
-//	std::cout << "HERE:  " << i << std::endl;
 
 
 	mainComponent.start();

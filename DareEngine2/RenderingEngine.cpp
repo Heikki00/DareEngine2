@@ -18,7 +18,7 @@
 #include "Uniform.h"
 #include "UUCallback.h"
 
-
+#include <CEGUI/CEGUI.h>
 
 
 inline Shader* scast(void* val){ return (Shader*)val; }
@@ -259,6 +259,8 @@ void RenderingEngine::render(GameObject* object){
 	
 	
 	
+	//CEGUI::System::getSingleton().renderAllGUIContexts();
+
 	CoreEngine::window->swapBuffers();
 	
 

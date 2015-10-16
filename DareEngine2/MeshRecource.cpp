@@ -1,6 +1,6 @@
 #include "MeshRecource.h"
 #include "DebugUtility.h"
-#include "DareMath.h"
+#include "FestusMath.h"
 
 MeshRecource::MeshRecource(std::vector<Vertex>& vertices, std::vector<unsigned int>& indices){
 	glGenBuffers(1, &vbo);

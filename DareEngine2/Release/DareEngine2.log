@@ -1,6 +1,9 @@
-﻿  Main.cpp
-     Creating library C:\Users\Heikki\Documents\Visual Studio 2013\Projects\DareEngine2\Release\DareEngine2.lib and object C:\Users\Heikki\Documents\Visual Studio 2013\Projects\DareEngine2\Release\DareEngine2.exp
-MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
-FbxLoader.obj : error LNK2001: unresolved external symbol "public: static class fbxsdk_2015_1::FbxIOSettings * __cdecl fbxsdk_2015_1::FbxIOSettings::Create(class fbxsdk_2015_1::FbxManager *,char const *)" (?Create@FbxIOSettings@fbxsdk_2015_1@@SAPAV12@PAVFbxManager@2@PBD@Z)
-FbxLoader.obj : error LNK2001: unresolved external symbol "public: static class fbxsdk_2015_1::FbxManager * __cdecl fbxsdk_2015_1::FbxManager::Create(void)" (?Create@FbxManager@fbxsdk_2015_1@@SAPAV12@XZ)
-C:\Users\Heikki\Documents\Visual Studio 2013\Projects\DareEngine2\Release\DareEngine2.exe : fatal error LNK1120: 2 unresolved externals
+﻿Build started 11.10.2015 16.07.41.
+     1>Project "C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\DareEngine2.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         DareEngine2.vcxproj -> C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\Release\DareEngine2.exe
+     1>Done Building Project "C:\Users\Heikki\Documents\Visual Studio 2015\Projects\DareEngine2\DareEngine2\DareEngine2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.11
